@@ -1,3 +1,5 @@
-## Welcome to GitHub Pages
-
-CHICKEN
+<!DOCTYPE.html>
+<html>
+<head>
+<h1> welcome to my website <h1/>
+</head>
