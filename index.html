@@ -1,71 +1,49 @@
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-<title>CSS Template</title>
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-/* Style the top navigation bar */
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Style the content */
-.content {
-    background-color: #ddd;
-    padding: 10px;
-    height:400px; /* Should be removed. Only for demonstration */
-}
-
-/* Style the footer */
-.footer {
-    background-color:lightblue;
-    padding: 10px;
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top:0px;
 }
 </style>
 </head>
 <body>
-  
-<div class="topnav">
-  <a href="">About Everest</a>
-  <a href="">Our Social Media's</a>
-  <a href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Contact</a>
-</div>
-<input type="text" placeholder="search..">
-<div class="content">
-  <h1>Everest</h1>
-    <p>Welcome to Everest the bootleg Amazon use the search bar below to find the item you want</p>
-   
-</div>
 
-<div class="footer">
-  <p>Footer</p>
-</div>
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("jan 4, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
 
 </body>
 </html>
-
